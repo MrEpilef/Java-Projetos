@@ -6,7 +6,7 @@ public class SmartTv {
 
 
     public void trocarCanal(int novoCanal){
-        /* Método para indicar diretamente para qual canal  a SmartTv irá
+        /** Método para indicar diretamente para qual canal  a SmartTv irá
          *@param novoCanal este é o parametro que receberá o canal a qual a smartv irá ser mudado
          */
         canal=novoCanal;

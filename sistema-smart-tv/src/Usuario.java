@@ -1,4 +1,4 @@
-/*<H1>Programa Smarttv</H1>
+/**<H1>Programa SmartTv</H1>
 *   O programa SmartTv permite operar uma tv por comandos, com operações simples de Ligar/Desligar,
 *   aumentar ou diminuir o volumel e canal, ou trocar de canal diretamente.
 *
