@@ -24,6 +24,10 @@ public class Usuario {
         smartTv.diminuirVolume();
         System.out.println("Diminui o volume para: " + smartTv.volume);
 
+        smartTv.desligar();
+        System.out.println("ACho que vou dormir...");
+        System.out.println(smartTv.ligada);
+
     }
 
 }
