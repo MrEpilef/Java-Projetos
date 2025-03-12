@@ -5,7 +5,10 @@ public class SmartTv {
     int volume=25; // váriavel que armazena o volume da smarTv
 
 
-    public void trocarCanal(int novoCanal){ //Irá trocar o volume para o que ser determinado diretamente!
+    public void trocarCanal(int novoCanal){
+        /* Método para indicar diretamente para qual canal  a SmartTv irá
+         *@param novoCanal este é o parametro que receberá o canal a qual a smartv irá ser mudado
+         */
         canal=novoCanal;
     }
     public void ligar(){ //liga a smartTv

@@ -1,3 +1,15 @@
+/*<H1>Programa Smarttv</H1>
+*   O programa SmartTv permite operar uma tv por comandos, com operações simples de Ligar/Desligar,
+*   aumentar ou diminuir o volumel e canal, ou trocar de canal diretamente.
+*
+* <b>Projeto SmartTv</b>
+*@autor     Felipe
+* @version  1.0
+* @since    11/03/2025
+*/
+
+
+
 public class Usuario {
 
 
