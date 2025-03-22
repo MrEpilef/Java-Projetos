@@ -1,47 +1,45 @@
 package candidatura;
 
-import java.util.concurrent.ThreadLocalRandom;
+import java.util.Random;
 
-public class ProcessoSeletivo{
-    public static void main(String[] args) {
-        selecaoCandidatos();
+public class ProcessoSeletivo {
+
+    static void main(String[] args) {
+        String[] candidatos = {"ANA", "PAULO", "LUCAS", "MARIA", "PEDRO", "JULIA", "ROBERTO", "SOFIA", "GABRIEL"};
+        for (String candidato : candidatos) {
+            EntrandoEmContato(candidato);
+        }
+
     }
-    static void selecaoCandidatos(){
-        String [] candidatos = {"ANA", "PAULO", "LUCAS", "MARIA", "PEDRO", "JULIA", "ROBERTO", "SOFIA", "GABRIEL", "LAURA", "FELIPE", "BEATRIZ", "MATEUS", "ISABELA", "RICARDO", "CAMILA", "LEONARDO", "ALICE", "RAFAEL", "MANUELA", "EDUARDO", "HELENA", "VINICIUS", "VALENTINA", "GUILHERME"};
-        int candidatoSelecionado=0;
-        int candidatoAtual=0;
-        double salarioBase=2000.00;
 
-        while (candidatoSelecionado<5){
-            String candidato = candidatos[candidatoAtual];
-            double salarioPretendido = valorPretendido();
+    //Função que recebe paramentro "candidato", tentara entrar em contato com candidato 3 vezes
+    static void EntrandoEmContato(String candidato) {
+        int tentativasRealizadas = 1;
+        boolean continuarTentando = true;
+        boolean atendeu = false;
 
-            System.out.println("O candidato "+ candidato + " solicitou este valor de salário: "+ salarioPretendido);
-            if (salarioBase>=salarioPretendido){
-                System.out.println("O candidato " + candidato + " foi selecionado para a vaga!");
-                candidatoSelecionado++;
-            }else{
-                System.out.println("O candidato " + candidato + " não foi selecionado para a vaga");
+        //Laço de repetição para fazer tentativa de contato
+        do {
+            atendeu = atender();
+            continuarTentando = !atendeu;
+            if (continuarTentando) {
+                tentativasRealizadas++;
+            } else {
+                System.out.println("Contato realizado com sucesso para o candidato " + candidato);
             }
-            candidatoAtual++;
-        }
 
+        } while (continuarTentando && tentativasRealizadas < 3);
+
+        if (atendeu) {
+            System.out.println("Conseguimos contato com " + candidato + " na tentativa " + tentativasRealizadas);
+        } else
+            System.out.println("Nao conseguimos contato com " + candidato);
     }
 
-    static double valorPretendido() {
-        return ThreadLocalRandom.current().nextDouble(1800.00, 2200.00);
+    //Função que gera um número aleatório, que se igual a 1, retornara true
+    static boolean atender() {
+        return new Random().nextInt(3) == 1;
     }
 
 
-    static void analisarCandidato(double salarioPretendido){
-        double salarioBase = 2000.00;
-        if(salarioBase>salarioPretendido) {
-            System.out.println("Ligar para candidato!");
-        } else if (salarioBase==salarioPretendido) {
-            System.out.println("Ligar para o candidato com contra proposta!");
-        } else{
-            System.out.println("AGUARDANDO RESULTADO DOS DEMAIS CANDIDATOS!");
-        }
-
-    }
 }
